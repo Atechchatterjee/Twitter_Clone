@@ -1,0 +1,117 @@
+$leftMargin: 1rem;
+$topMargin: 3rem;
+$formBodyMargin: 2rem;
+$loginNsignupBtn: 20vh;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(58, 82, 126);
+}
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #eeeded;
+}
+table {
+  margin-left: 10px;
+  border-collapse: collapse;
+  border: 1px solid black !important;
+  width: 40%;
+}
+tr:hover {
+  background-color: #ddd;
+}
+th {
+  background-color: #7a7a7a;
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  margin: 0;
+}
+td {
+  width: fit-content;
+}
+
+.form-control {
+  width: 70% !important;
+}
+h2 {
+  margin-left: $leftMargin;
+  margin-top: -7% !important;
+}
+h1 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.863);
+  margin-top: 14% !important;
+  font-size: 350% !important;
+}
+h5 {
+  color: rgb(235, 235, 235);
+  margin-left: 42%;
+}
+#login-btn,
+#registration-btn {
+  height: 7.5vh !important;
+  width: 8% !important;
+  margin-left: 1%;
+  margin-top: $loginNsignupBtn;
+}
+#login-btn {
+  height: 7.5vh !important;
+  width: 8% !important;
+  margin-top: $loginNsignupBtn;
+}
+.login-submit {
+  margin-top: 5.5%;
+}
+.login-form {
+  margin-left: $leftMargin;
+  margin-top: $topMargin;
+}
+.modal-close {
+  margin-top: 2%;
+  width: 3rem;
+  height: 3rem;
+  border: none !important;
+  border-radius: 50% !important;
+  margin-left: 90% !important;
+  box-shadow: none !important;
+  font-size: 150% !important;
+}
+.loginModal-body {
+  height: 22rem !important;
+}
+.login-trigger,
+.registraion-trigger {
+  font-size: 1em !important;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  width: 6rem;
+}
+.registrationModal-body {
+  margin-left: 7%;
+  margin-top: 2%;
+  height: 70vh;
+}
+.input-form {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+.login-form-body {
+  margin-top: $formBodyMargin;
+}
+.registration-form-body {
+  margin-top: $formBodyMargin;
+  margin-bottom: $formBodyMargin !important;
+}
+.errorMsg {
+  color: rgb(216, 50, 50);
+  font-size: 0.85em;
+  margin-top: -5%;
+  position: absolute;
+  font-weight: bold;
+}
