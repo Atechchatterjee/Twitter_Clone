@@ -23,7 +23,10 @@ const RegistrationForm: FC = () => {
         displayName,
         description,
       })
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        window.location.assign("/profile");
+      })
       .catch((err) => {
         if (err) throw err;
       });

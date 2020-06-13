@@ -7,6 +7,7 @@ export default (sequelize: any, DataTypes: any) => {
       email: DataTypes.STRING,
       displayName: DataTypes.STRING,
       description: DataTypes.TEXT,
+      profilePicture: DataTypes.STRING,
     },
     {}
   );

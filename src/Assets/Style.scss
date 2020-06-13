@@ -6,7 +6,7 @@ $loginNsignupBtn: 20vh;
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(58, 82, 126);
+  background-color: rgb(58, 82, 126) !important;
 }
 table td,
 table th {
@@ -49,9 +49,19 @@ h1 {
   margin-top: 14% !important;
   font-size: 350% !important;
 }
+h3 {
+  float: left;
+}
 h5 {
   color: rgb(235, 235, 235);
   margin-left: 42%;
+}
+.Navbar {
+  background-color: #05acf0 !important;
+  color: white !important;
+}
+.white {
+  color: white !important;
 }
 #login-btn,
 #registration-btn {
@@ -114,4 +124,55 @@ h5 {
   margin-top: -5%;
   position: absolute;
   font-weight: bold;
+}
+.Profile {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+.profileInfo {
+  float: left;
+  margin-left: 2%;
+}
+#profileDisplayName {
+  position: absolute;
+  color: black !important;
+  margin-top: 23.5vh !important;
+}
+#profileUsername {
+  position: absolute;
+  margin-top: 30vh !important;
+  font-size: 0.8rem;
+}
+#profileDescription {
+  position: absolute;
+  margin-top: 35vh;
+}
+.profilePictureDiv {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(207, 207, 207);
+  margin-left: 30%;
+  margin-top: 10%;
+  float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.fadeIn {
+  -webkit-animaiintion: fadeInFromNone 2s ease-out;
+  -moz-animation: fadeInFromNone 2s ease-out;
+  -o-animation: fadeInFromNone 2s ease-out;
+  opacity: 1;
+}
+.uploadSymbol {
+  margin-top: 39% !important;
+  opacity: 0;
+  // -webkit-animation: fadeInFromNone 0.5s ease-out;
+  // -moz-animation: fadeInFromNone 0.5s ease-out;
+  // -o-animation: fadeInFromNone 0.5s ease-out;
+}
+.uploadProfilePicture {
+  display: none;
 }

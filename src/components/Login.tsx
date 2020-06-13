@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
@@ -10,6 +10,7 @@ interface Props {
 const LoginForm: FC<Props> = ({ callback }) => {
   const [username, changeUsername] = useState<string>("");
   const [password, changePassword] = useState<string>("");
+  const errMsgRef = useRef<HTMLSpanElement | null>(null);
 
   function submitUserData(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -26,9 +27,8 @@ const LoginForm: FC<Props> = ({ callback }) => {
           window.location.assign("/profile");
           callback(res.data.loggedIn);
         } else {
-          var errorMsg: any = document.querySelector(".loginError");
-          if (errorMsg !== null) {
-            errorMsg.innerHTML = "username or password is wrong";
+          if (errMsgRef.current !== null) {
+            errMsgRef.current.innerHTML = "username or password is wrong";
           }
         }
       })
@@ -40,7 +40,7 @@ const LoginForm: FC<Props> = ({ callback }) => {
   return (
     <form className="login-form">
       <div className="login-form-body">
-        <span className="errorMsg loginError"></span>
+        <span ref={errMsgRef} className="errorMsg loginError"></span>
         <div className="md-form ">
           <input
             type="text"

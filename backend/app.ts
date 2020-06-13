@@ -18,6 +18,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use("/uploads", express.static("uploads"));
 
 app.use(passport.initialize());
 app.use(passport.session());
