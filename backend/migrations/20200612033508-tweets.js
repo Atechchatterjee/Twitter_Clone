@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("Tweets", {
-      tweet_id: {
+      id: {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       toUser: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       tweet: {
@@ -24,6 +24,14 @@ module.exports = {
       likes: {
         allowNull: true,
         type: Sequelize.INTEGER,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
       },
     });
   },

@@ -119,6 +119,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const router = express.Router();
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -160,5 +161,23 @@ router.get("/getProfilePicture", (req, res) => {
     res.send(uid);
   });
 });
+
+router.post(
+  "/getProfileWithDisplayName",
+  urlencodedParser,
+  (req: Request, res: Response) => {
+    const { name } = req.body;
+    console.log("Searching for " + name + " #backend");
+    models.Users.findAll({
+      where: {
+        displayName: name,
+      },
+    }).then((result) => {
+      console.log("Users' profile with displayName = " + name);
+      console.log(result);
+      res.send(result);
+    });
+  }
+);
 
 export default router;

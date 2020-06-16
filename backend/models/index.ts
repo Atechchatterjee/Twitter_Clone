@@ -17,6 +17,7 @@ const sequelize = new Sequelize(db_database, db_username, db_password, {
 const models = {
   Users: sequelize.import("./user"),
   Follows: sequelize.import("./follows"),
+  Tweets: sequelize.import("./tweets"),
 };
 
 export default sequelize.models;

@@ -49,6 +49,14 @@ const App: FC = () => {
     }
   }
 
+  function renderProfile(props: any) {
+    return (
+      <>
+        <h1>{props.location.pathname}</h1>
+      </>
+    );
+  }
+
   return (
     <div className="App">
       <Router>
@@ -56,6 +64,10 @@ const App: FC = () => {
           <Route path="/" exact component={Form}></Route>
           <ProtectedRoute path="/main" component={Main}></ProtectedRoute>
           <ProtectedRoute path="/profile" component={Profile}></ProtectedRoute>
+          <Route
+            path="/:profile"
+            render={(props: any) => renderProfile(props)}
+          ></Route>
         </Switch>
       </Router>
     </div>

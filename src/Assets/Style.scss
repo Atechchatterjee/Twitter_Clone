@@ -6,7 +6,6 @@ $loginNsignupBtn: 20vh;
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(58, 82, 126) !important;
 }
 table td,
 table th {
@@ -45,7 +44,6 @@ h2 {
 }
 h1 {
   text-align: center;
-  color: rgba(255, 255, 255, 0.863);
   margin-top: 14% !important;
   font-size: 350% !important;
 }
@@ -126,10 +124,11 @@ h5 {
   font-weight: bold;
 }
 .Profile {
-  background-color: white;
-  height: 100vh;
+  // background-color: #2a3f55;
+  height: 100%;
   width: 100%;
-  position: absolute;
+  position: relative;
+  padding-bottom: 5%;
 }
 .profileInfo {
   float: left;
@@ -169,10 +168,53 @@ h5 {
 .uploadSymbol {
   margin-top: 39% !important;
   opacity: 0;
-  // -webkit-animation: fadeInFromNone 0.5s ease-out;
-  // -moz-animation: fadeInFromNone 0.5s ease-out;
-  // -o-animation: fadeInFromNone 0.5s ease-out;
 }
 .uploadProfilePicture {
   display: none;
+}
+.tweetModal-close {
+  margin-left: 82% !important;
+  margin-top: -7% !important;
+  position: absolute;
+}
+.tweet-input,
+.tweetPost {
+  margin-top: 6%;
+}
+.tweetModalBody {
+  padding: 8% !important;
+}
+.allUserTweets {
+  margin-left: 20%;
+  margin-top: 37%;
+  width: 40% !important;
+}
+
+.tweetCard {
+  text-align: left;
+  margin-bottom: 3%;
+  padding-left: 4%;
+  padding-bottom: 3%;
+  background-color: #fafafa !important;
+  opacity: 0.7;
+  font-weight: bold;
+  color: rgb(61, 61, 61) !important;
+  box-shadow: rgb(151, 151, 151) 3px 3px 2px;
+}
+.tweetCard:hover {
+  opacity: 1;
+}
+.toggleShowTweets {
+  position: absolute;
+  margin-top: 35%;
+  margin-left: -20%;
+}
+.searchedProfileWrpapper {
+  width: 30% !important;
+  height: 10% !important;
+  float: right;
+}
+.FollowText {
+  color: blue;
+  cursor: pointer;
 }

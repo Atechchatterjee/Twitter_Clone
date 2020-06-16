@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import authRouter from "./lib/authentication";
 import profileRouter from "./lib/profile";
+import tweetRouter from "./lib/tweets";
 import session from "express-session";
 import passport from "passport";
 
@@ -18,10 +19,14 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+// static routes
 app.use("/uploads", express.static("uploads"));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// backend-routes
 app.use("/profile", profileRouter);
 app.use("/auth", authRouter);
+app.use("/tweets", tweetRouter);

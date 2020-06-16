@@ -16,7 +16,7 @@
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.0",
-    "dotenv": "^8.2.0",
+    "mdbreact": "^4.27.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@types/node": "^12.12.44",
+    "dotenv": "^8.2.0",
     "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.44"
   },
