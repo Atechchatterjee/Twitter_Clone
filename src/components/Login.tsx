@@ -2,10 +2,20 @@ import React, { FC, useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
+import Cookies from "universal-cookie";
+import bcrypt from "bcryptjs";
 
 interface Props {
   callback: Function;
 }
+
+const cookie = new Cookies();
+
+// syncronously hashes the username
+const hashUser = (username: string): string => {
+  const salt = bcrypt.genSaltSync(12);
+  return bcrypt.hashSync(username, salt);
+};
 
 const LoginForm: FC<Props> = ({ callback }) => {
   const [username, changeUsername] = useState<string>("");
@@ -24,7 +34,10 @@ const LoginForm: FC<Props> = ({ callback }) => {
       .then((res) => {
         console.log(res.data.loggedIn);
         if (res.data.loggedIn) {
-          window.location.assign("/profile");
+          // redirecting to the user's profile
+          window.location.assign(`/${username}`);
+          // setting the cookie
+          cookie.set("user", hashUser(username));
           callback(res.data.loggedIn);
         } else {
           if (errMsgRef.current !== null) {

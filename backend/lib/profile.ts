@@ -124,12 +124,12 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-router.get("/getData", (req: Request, res: Response) => {
-  console.log("profile req.user = " + req.user);
-  const user = req.user ? req.user : "";
+router.post("/getData", urlencodedParser, (req: Request, res: Response) => {
+  const requestedUser: string = req.body.username;
+  console.log("profile req.user = " + requestedUser);
   models.Users.findAll({
     where: {
-      username: user,
+      username: requestedUser,
     },
   }).then((userData) => {
     const { username, displayName, description }: any = userData[0].toJSON();
@@ -155,8 +155,9 @@ router.post(
   }
 );
 
-router.get("/getProfilePicture", (req, res) => {
-  getUser(req.user).then((user: any) => {
+router.post("/getProfilePicture", urlencodedParser, (req, res) => {
+  const requestedUser: string = req.body.username;
+  getUser(requestedUser).then((user: any) => {
     const uid = user.profilePicture;
     res.send(uid);
   });

@@ -30,20 +30,21 @@ router.post(
   }
 );
 
-router.get(
+router.post(
   "/getUserTweets",
   urlencodedParser,
   async (req: Request, res: Response) => {
-    if (req.user) {
-      models.Tweets.findAll({
-        where: {
-          fromUser: req.user,
-        },
-      }).then((allTweets) => {
-        res.send(allTweets);
-      });
-    }
+    const requestedUser = req.body.username;
+    // if (req.user) {
+    models.Tweets.findAll({
+      where: {
+        fromUser: requestedUser,
+      },
+    }).then((allTweets) => {
+      res.send(allTweets);
+    });
   }
+  // }
 );
 
 export default router;

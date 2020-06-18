@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import models from "../models/index";
 import dotenv from "dotenv";
 import passport from "passport";
-import authenticationMiddleware from "./auth-middleware";
 
 dotenv.config();
 

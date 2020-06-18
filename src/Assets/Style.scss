@@ -7,6 +7,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.display {
+  display: block;
+}
+.noDisplay {
+  display: none;
+}
 table td,
 table th {
   border: 1px solid #ddd;
@@ -60,6 +66,10 @@ h5 {
 }
 .white {
   color: white !important;
+}
+.spinner-center {
+  position: absolute !important;
+  margin: 20% 50% !important;
 }
 #login-btn,
 #registration-btn {
@@ -217,4 +227,7 @@ h5 {
 .FollowText {
   color: blue;
   cursor: pointer;
+}
+.profile-spinner {
+  margin-top: 40% !important;
 }

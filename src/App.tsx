@@ -50,9 +50,10 @@ const App: FC = () => {
   }
 
   function renderProfile(props: any) {
+    let requestedUser = props.location.pathname.substring(1);
     return (
       <>
-        <h1>{props.location.pathname}</h1>
+        <Profile urlProps={requestedUser} />
       </>
     );
   }
@@ -63,7 +64,7 @@ const App: FC = () => {
         <Switch>
           <Route path="/" exact component={Form}></Route>
           <ProtectedRoute path="/main" component={Main}></ProtectedRoute>
-          <ProtectedRoute path="/profile" component={Profile}></ProtectedRoute>
+          {/* <ProtectedRoute path="/profile" component={Profile}></ProtectedRoute> */}
           <Route
             path="/:profile"
             render={(props: any) => renderProfile(props)}
