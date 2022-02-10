@@ -19,7 +19,7 @@
     "bootstrap": "^4.5.0",
     "browser-image-compression": "^1.0.12",
     "mdbreact": "^4.27.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
